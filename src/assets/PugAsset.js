@@ -16,7 +16,7 @@ class PugAsset extends Asset {
     const compiled = pug.compile(this.contents, {
       compileDebug: false,
       filename: this.name,
-      basedir: path.dirname(this.name),
+      basedir: config.basedir || path.dirname(this.name),
       pretty: !this.options.minify,
       templateName: path.basename(this.basename, path.extname(this.basename)),
       filters: config.filters,
